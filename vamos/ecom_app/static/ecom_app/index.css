@@ -1,0 +1,297 @@
+body {
+  font-family:"Helvetica", sans-serif;
+  font-weight: 800;
+}
+
+h2{
+  padding-block: 30px;
+    margin-block: 0px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  color: #ffffff;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 16px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #3d3d3d;
+  font-weight: 300;
+  line-height: 25px;
+  margin: 0 0 15px 0;
+}
+
+/* MAIN CRAOUSEL SLIDE SHOW */
+
+.carousel {
+  display: block;
+  align-items: center;
+  position: relative;
+}
+
+.d-block {
+  padding-block-start: 70px;
+  padding-block-end: 80px;
+}
+
+.carousel-inner {
+  padding-block: 0px;
+  position: inherit;
+  width: 100%;
+  overflow: visible;
+}
+
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 90px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-right: 15%;
+  margin-bottom: 1rem;
+  margin-left: 15%;
+}
+
+/* Style the carousel caption */
+
+.carousel-caption,
+p1 {
+  display: inline-block;
+  font-family: "Impact", sans-serif;
+  font-size: 50px; /* Increase font size */
+  font-weight: bold; /* Make it very bold */
+  color: black;
+  align-content: center;
+  bottom: 400px;
+  max-width: 100%;
+}
+
+/* Style the CTA button */
+.cta-button {
+  font-family: "Impact", sans-serif;
+  font-size: 20px;
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  padding: 20px 20px;
+  border: 2px solid rgb(0, 0, 0); /* Black border */
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Add a hover effect to the CTA button */
+.cta-button:hover {
+  background-color: #ef5835; /* Black background on hover */
+  color: rgb(0, 0, 0); /* White text on hover */
+  border: black;
+}
+
+/* Style the second carousel images */
+
+/* Banner section styles */
+.spad {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.small-image {
+  max-width: 80%; /* Adjust the maximum width as per your preference */
+}
+
+/* CSS for increasing the size of the other two images */
+.large-image {
+  max-width: 110%; /* Adjust the maximum width as per your preference */
+}
+
+.banner__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px; /* Add margin between banner items */
+}
+
+.banner__item__text {
+  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  padding: 20px; /* Add padding for spacing */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Add a semi-transparent background */
+}
+
+.banner__item__text h2 {
+  color: #111111;
+  font-weight: 700;
+  line-height: 1.4; /* Adjust line height for readability */
+  margin-bottom: 10px;
+  font-size: 24px; /* Increase font size */
+}
+
+.banner__item__text a {
+  display: inline-block;
+  color: #111111;
+  border: 2px solid rgb(0, 0, 0); /* Black border */
+  font-size: 14px; /* Increase font size */
+  font-weight: 700;
+  letter-spacing: 2px; /* Adjust letter spacing */
+  text-transform: uppercase;
+  padding: 10px 20px; /* Increase padding for better clickability */
+  position: relative;
+  background-color: transperent; /* Black background on hover */
+  text-decoration: none; /* Remove underlines */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.banner__item__text a:hover {
+  background-color: #ef5835; /* Black background on hover */
+}
+
+/* Style the footer */
+/* Base styles for the footer */
+.footer {
+  display: flex;
+  background: #111111;
+  padding: 50px 0; /* Updated padding shorthand */
+}
+
+/* Styles for the footer's about section */
+.footer__about {
+  margin-bottom: 30px;
+}
+
+.footer__about .footer__logo {
+  margin-bottom: 30px;
+}
+
+.footer__about .footer__logo a {
+  display: inline-block;
+}
+
+.footer__about p {
+  color: #b7b7b7;
+  margin-bottom: 0; /* Removed the extra margin */
+}
+
+/* Styles for the footer's widget section */
+.footer__widget {
+  margin-bottom: 30px;
+}
+
+.footer__widget h6 {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.footer__widget ul {
+  padding: 0; /* Remove default padding from ul */
+  list-style: none;
+}
+
+.footer__widget ul li {
+  line-height: 36px;
+}
+
+.footer__widget ul li a {
+  color: #b7b7b7;
+  font-size: 15px;
+  text-decoration: none; /* Remove underlines from links */
+}
+
+/* Styles for the newsletter section in the widget */
+.footer__widget .footer__newslatter p {
+  color: #b7b7b7;
+  margin-bottom: 10px; /* Adjusted margin for spacing */
+}
+
+.footer__widget .footer__newslatter form {
+  position: relative;
+}
+
+.footer__widget .footer__newslatter form input {
+  width: 100%;
+  font-size: 15px;
+  color: #3d3d3d;
+  background: transparent;
+  border: none;
+  padding: 15px 0;
+  border-bottom: 2px solid #ffffff;
+}
+
+/* Styles for the newsletter input placeholders */
+.footer__widget .footer__newslatter form input::placeholder {
+  color: #b7b7b7; /* Adjusted placeholder color */
+}
+
+.footer__widget .footer__newslatter form button {
+  color: #b7b7b7;
+  font-size: 16px;
+  position: absolute;
+  right: 0; /* Adjusted button position */
+  top: 0;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer; /* Added cursor style */
+}
+
+/* Styles for the copyright text */
+.footer__copyright__text {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footer__copyright__text p {
+  color: #b7b7b7;
+  margin-bottom: 0;
+}
+
+.footer__copyright__text p i,
+.footer__copyright__text p a {
+  color: #e53637;
+  text-decoration: none; /* Added for consistency */
+}
+
+
+/* Message box */
+
+/* Styling for messages */
+
