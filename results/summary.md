@@ -1,9 +1,14 @@
 # Results Summary (from dissertation)
 
-| Scenario        | p50 (ms) | p95 (ms) | Error % | RPS | Notes                  |
-|----------------|----------|----------|---------|-----|------------------------|
-| Baseline       |          |          |         |     |                        |
-| Autoscale OFF  |          |          |         |     |                        |
-| Autoscale ON   |          |          |         |     |                        |
+**Scenarios evaluated (as in the report):**
+- Baseline (no autoscale)
+- Autoscale OFF
+- Autoscale ON (with warmup + health checks)
 
-**Commentary:** Summarize the exact points you made in the dissertation (tail latency behavior, error % changes, and why guardrails mattered).
+**Reported outcomes:**
+- Tail latency (p95) stabilized during spikes when **autoscale ON** compared to Baseline/Autoscale OFF.
+- Error rate decreased under bursty load with **autoscale ON**.
+- Guardrails (min/max instances, warmup, health check, cooldown) were more impactful than raw instance size.
+- A documented rollback (~10 minutes) limited blast radius during bad deploys.
+
+> Note: The dissertation did not provide separate downloadable numeric datasets or image assets; this repo intentionally mirrors the **textual findings** only and links to the PDF as the source of truth.
