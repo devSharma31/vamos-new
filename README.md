@@ -18,7 +18,7 @@ This repository mirrors the **MSc dissertation project** exactly (no added tools
 ---
 
 ## Architecture (per dissertation)
-![Architecture](/docs/Architecture.PNG)
+![Architecture](/docs/Architechture.PNG)
 
 **AWS stack:** Elastic Beanstalk (web), RDS (DB), S3 (assets), CloudFront (CDN)  
 **Azure mapping:** App Service, Azure SQL, Blob Storage, Azure CDN
