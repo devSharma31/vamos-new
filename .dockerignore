@@ -8,8 +8,5 @@ main_venv/
 *.log
 *.sqlite3
 .DS_Store
-evidence/
-dissertation/
-tools/
 results/
 docs/
