@@ -1,33 +1,32 @@
-# Slim Python base
 FROM python:3.11-slim
 
-# System libs for Pillow (JPEG/PNG), psycopg2, etc. — common for Django
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential libjpeg62-turbo-dev zlib1g-dev libpq-dev \
- && rm -rf /var/lib/apt/lists/*
-
-# Workdir
-WORKDIR /app
-
-# Copy requirements pointers first for better layer caching
-COPY requirements.txt requirements-ops.txt ./
-COPY vamos/requirements.txt ./vamos/requirements.txt
-
-# Install Python deps (ops file includes -r requirements.txt + gunicorn)
-RUN pip install --upgrade pip && \
-    pip install -r requirements-ops.txt
-
-# Copy project source
-COPY . .
-
-# Environment (safe defaults for local/dev)
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    DJANGO_SETTINGS_MODULE=vamos.settings \
+    PIP_NO_CACHE_DIR=1 \
     PORT=8000
+
+# Work at repo root first
+WORKDIR /app
+
+# System build tools (safe minimal)
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install deps: keep thesis deps pure and add gunicorn via requirements-ops.txt
+COPY requirements-ops.txt ./
+COPY vamos/requirements.txt vamos/requirements.txt
+RUN pip install -r requirements-ops.txt
+
+# Copy source
+COPY . .
+
+# Switch to Django project root so `import vamos.wsgi` resolves
+WORKDIR /app/vamos
+
+# Optional: collectstatic if your project uses it (won't fail build if not configured)
+# RUN python manage.py collectstatic --noinput || true
 
 EXPOSE 8000
 
-# Health-ish start: run Django via gunicorn
-# If your module name is not 'vamos', change 'vamos.wsgi:application'
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "vamos.wsgi:application"]
+# Gunicorn entrypoint for nested layout: repo/vamos/vamos/wsgi.py
+CMD ["gunicorn", "vamos.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "2", "--timeout", "60"]
