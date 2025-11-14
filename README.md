@@ -90,7 +90,10 @@ Set these via your shell or Elastic Beanstalk configuration:
 
 - Platform: **Docker running on 64bit Amazon Linux 2**.
 - Zip and upload the repository root (must include `Dockerfile`).
-- EB builds the image and starts: gunicorn vamos.wsgi:application --bind 0.0.0.0:8000 --workers 2 --timeout 60
+- EB builds the image and starts: 
+```
+gunicorn vamos.wsgi:application --bind 0.0.0.0:8000 --workers 2 --timeout 60
+```
 - Ensure environment variables are set (see “Environment variables” above).
 - Security group / load balancer must allow port 80 → container port **8000**.
 
