@@ -3,7 +3,7 @@
 This repository mirrors the **MSc dissertation project** exactly (no new tools, numbers, or images beyond the report).
 
 **Dissertation:** *Scalability and Performance Optimization in Cloud-based E-commerce & M-commerce Applications* — Devashish Sharma, Supervisor: Prof. Kashinath Basu, **submitted 02 Oct 2023**.  
-PDF: [`/dissertation/Devashish_Sharma_MSc_2023.pdf`](docs/Devashish_Sharma_MSc_2023.pdf)
+PDF: [`/docs/Devashish_Sharma_MSc_2023.pdf`](docs/Devashish_Sharma_MSc_2023.pdf)
 
 ---
 
