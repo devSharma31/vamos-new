@@ -1,4 +1,7 @@
 # Cloud E-commerce Scalability — Autoscaling Guardrails (AWS ↔ Azure)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Python](https://img.shields.io/badge/python-3.11-blue.svg)
+[![Dockerized](https://img.shields.io/badge/docker-ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
 
 This repository mirrors the **MSc dissertation project** exactly (no new tools, numbers, or images beyond the report).
 
