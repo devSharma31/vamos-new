@@ -52,6 +52,17 @@ python manage.py runserver
 ```
 
 ---
+## Containerization
+The prototype was containerised with Docker and hosted on AWS (as detailed in the thesis).  
+This repository provides a reproducible `Dockerfile` for local runs.  
+
+For a quick test:
+
+```bash
+docker build -t vamos-app:latest .
+docker run --rm -p 8000:8000 vamos-app:latest
+# http://localhost:8000/
+```
 
 ## Scope & Integrity
 
