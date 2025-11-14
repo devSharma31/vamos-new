@@ -1,0 +1,3 @@
+# Ops/runtime extras for container image
+-r requirements.txt
+gunicorn>=20.1
