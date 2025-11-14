@@ -1,1 +1,3 @@
+# Canonical installer for the project
+# Delegates to the app-specific list to avoid duplication
 -r vamos/requirements.txt
