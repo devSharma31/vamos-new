@@ -49,3 +49,11 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 python manage.py runserver 
+
+
+## cope & Integrity
+
+This repo is an evidence mirror of the thesis.
+- No new experiments or fabricated charts.
+- No added tools not used in the report.
+- CI/CD and Terraform live in separate repos to avoid overlap with this academic artifact.
