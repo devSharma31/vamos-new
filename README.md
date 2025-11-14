@@ -1,6 +1,7 @@
 # Cloud E-commerce Scalability — Autoscaling Guardrails (AWS ↔ Azure)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.11-blue.svg)
+![Django](https://img.shields.io/badge/Django-4.2-092E20?logo=django&logoColor=white)
 [![Dockerized](https://img.shields.io/badge/docker-ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
 
 This repository mirrors the **MSc dissertation project** exactly (no new tools, numbers, or images beyond the report).
@@ -39,13 +40,14 @@ A simple web tier behind a load balancer with a managed DB and CDN.
 - **Metrics discussed:** p50/p95 latency, Error %, RPS, CPU.  
 - **Artifacts:** Findings summarized here; the PDF is the source of record.
 
-See: [`results/summary.md`](results/summary.md)
+**Findings:** see [`results/summary.md`](results/summary.md) (verbatim from the dissertation; no new data).
+
 
 ---
 
 ## Run the prototype
 
-1) Local Python (no Docker)
+### 1) Local Python (no Docker)
 ```bash
 python -m venv .venv
 # Windows: .venv\Scripts\activate
@@ -54,11 +56,13 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 python vamos/manage.py runserver
+# http://127.0.0.1:8000
+
 ```
 2) Local Docker
 ```
 docker compose up --build
-# Open http://127.0.0.1:8000
+# http://127.0.0.1:8000
 ```
 
 ---
@@ -66,20 +70,30 @@ docker compose up --build
 The prototype was containerised with Docker and hosted on AWS (as detailed in the thesis).  
 This repository provides a reproducible `Dockerfile` for local runs.  
 
-For a quick test:
-
-**Local**
+Local smoke test:
 ```bash
 docker compose up --build
 # http://127.0.0.1:8000
 ```
 ---
 
+
+### Environment variables (Django)
+Set these via your shell or Elastic Beanstalk configuration:
+
+- `DJANGO_SETTINGS_MODULE=vamos.settings`
+- `SECRET_KEY=<set a non-empty value>`
+- `DEBUG=False` (for production) / `True` (local dev)
+- `ALLOWED_HOSTS=localhost,127.0.0.1` (plus your EB hostname when deployed)
+
 ## AWS Elastic Beanstalk (Docker, AL2)
 
-- Create an EB environment with Platform: Docker running on 64bit Amazon Linux 2.
-- Zip and upload the repo root (must include Dockerfile).
-- EB builds the image and runs Gunicorn with vamos.wsgi:application on port 8000.
+- Platform: **Docker running on 64bit Amazon Linux 2**.
+- Zip and upload the repository root (must include `Dockerfile`).
+- EB builds the image and starts: gunicorn vamos.wsgi:application --bind 0.0.0.0:8000 --workers 2 --timeout 60
+- Ensure environment variables are set (see “Environment variables” above).
+- Security group / load balancer must allow port 80 → container port **8000**.
+
 
 
 ## Scope & Integrity
