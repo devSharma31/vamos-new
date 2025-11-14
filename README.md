@@ -58,11 +58,18 @@ This repository provides a reproducible `Dockerfile` for local runs.
 
 For a quick test:
 
+**Local**
 ```bash
-docker build -t vamos-app:latest .
-docker run --rm -p 8000:8000 vamos-app:latest
-# http://localhost:8000/
+docker compose up --build
+# http://127.0.0.1:8000
 ```
+
+##AWS Elastic Beanstalk (Docker, AL2)
+
+- Create an EB environment with Platform: Docker running on 64bit Amazon Linux 2.
+- Zip and upload the repo root (must include Dockerfile).
+- EB builds the image and runs Gunicorn with vamos.wsgi:application on port 8000.
+
 
 ## Scope & Integrity
 
