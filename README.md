@@ -7,7 +7,7 @@ PDF: [`/dissertation/Devashish_Sharma_MSc_2023.pdf`](dissertation/Devashish_Shar
 
 ---
 
-## TL;DR (as stated in the dissertation)
+## TL;DR 
 - Autoscaling stabilizes **p95 latency** and reduces **error rate** under bursty traffic.  
 - **Guardrails** (min/max instances, warmup, health checks, cooldown) matter more than raw instance size.  
 - A **documented rollback (~10 min)** keeps blast radius small.
@@ -16,7 +16,7 @@ PDF: [`/dissertation/Devashish_Sharma_MSc_2023.pdf`](dissertation/Devashish_Shar
 
 ---
 
-## Architecture (per dissertation)
+## Architecture 
 A simple web tier behind a load balancer with a managed DB and CDN.  
 *(Diagram resides in the dissertation PDF; this repo uses text-only to avoid introducing new assets.)*
 
@@ -31,7 +31,7 @@ A simple web tier behind a load balancer with a managed DB and CDN.
 
 ---
 
-## Methodology (per dissertation)
+## Methodology 
 - **Scenarios:** Baseline (no autoscale), Autoscale OFF, Autoscale ON (with warmup + `/health`).  
 - **Metrics discussed:** p50/p95 latency, Error %, RPS, CPU.  
 - **Artifacts:** Findings summarized here; the PDF is the source of record.
@@ -40,7 +40,7 @@ See: [`results/summary.md`](results/summary.md)
 
 ---
 
-## Run the prototype (only if this was part of the thesis)
+## Run the prototype
 ```bash
 python -m venv .venv
 # Windows: .venv\Scripts\activate
@@ -48,4 +48,4 @@ python -m venv .venv
 source .venv/bin/activate
 
 pip install -r requirements.txt
-python manage.py runserver  # or the exact entrypoint you used in the report
+python manage.py runserver 
