@@ -50,8 +50,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python manage.py runserver 
 
-
-## cope & Integrity
+---
+## Scope & Integrity
 
 This repo is an evidence mirror of the thesis.
 - No new experiments or fabricated charts.
