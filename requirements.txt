@@ -1,0 +1,1 @@
+-r vamos/requirements.txt
