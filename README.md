@@ -63,7 +63,7 @@ For a quick test:
 docker compose up --build
 # http://127.0.0.1:8000
 ```
-
+---
 ##AWS Elastic Beanstalk (Docker, AL2)
 
 - Create an EB environment with Platform: Docker running on 64bit Amazon Linux 2.
