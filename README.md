@@ -41,6 +41,8 @@ See: [`results/summary.md`](results/summary.md)
 ---
 
 ## Run the prototype
+
+1) Local Python (no Docker)
 ```bash
 python -m venv .venv
 # Windows: .venv\Scripts\activate
@@ -49,6 +51,11 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 python vamos/manage.py runserver
+```
+2) Local Docker
+```
+docker compose up --build
+# Open http://127.0.0.1:8000
 ```
 
 ---
