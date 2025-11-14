@@ -49,8 +49,10 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 python manage.py runserver 
+```
 
 ---
+
 ## Scope & Integrity
 
 This repo is an evidence mirror of the thesis.
