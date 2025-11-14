@@ -1,0 +1,12 @@
+.git
+__pycache__/
+*.pyc
+.venv/
+venv/
+main_venv/
+*.log
+*.jtl
+.DS_Store
+evidence/
+dissertation/
+tools/
